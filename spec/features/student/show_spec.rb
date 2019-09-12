@@ -5,8 +5,8 @@ describe 'Student show page' do
     @tylor = Student.create(name: 'Tylor Schafer')
     @math = Course.create(name: 'Math')
     @music = Course.create(name: 'Music Class')
-    @student_course_math = @tylor.student_course.create(grade: 3.0, course_id: @math.id)
-    @student_course_music = @tylor.student_course.create(grade: 4.0, course_id: @music.id)
+    @student_course_math = @tylor.student_courses.create(grade: 3.0, course_id: @math.id)
+    @student_course_music = @tylor.student_courses.create(grade: 4.0, course_id: @music.id)
   end
 
   it 'Shows info about the student' do
