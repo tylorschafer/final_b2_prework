@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190912150526) do
+ActiveRecord::Schema.define(version: 20190912151849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,13 +22,13 @@ ActiveRecord::Schema.define(version: 20190912150526) do
   create_table "student_courses", force: :cascade do |t|
     t.bigint "student_id"
     t.bigint "course_id"
+    t.float "grade"
     t.index ["course_id"], name: "index_student_courses_on_course_id"
     t.index ["student_id"], name: "index_student_courses_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
     t.string "name"
-    t.float "grade"
   end
 
   add_foreign_key "student_courses", "courses"
