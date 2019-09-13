@@ -1,0 +1,7 @@
+<h1><%= @course.name %></h1>
+
+<h3>Student Statistics</h3>
+
+<% @course.student_rank.each do |student| %>
+  <p><%= student.name %>: <%= student.grade %></p>
+<% end %>

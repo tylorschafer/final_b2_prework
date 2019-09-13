@@ -7,4 +7,10 @@ class Course < ApplicationRecord
   def student_grade(student_id)
     student_courses.where(student_id: student_id).pluck(:grade).first
   end
+
+  def student_rank
+    student_courses.joins(:student)
+                   .select("students.name, student_courses.grade")
+                   .order('student_courses.grade DESC')
+  end
 end
