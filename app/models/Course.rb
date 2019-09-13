@@ -4,10 +4,6 @@ class Course < ApplicationRecord
 
   validates_presence_of :name
 
-  def student_grade(student_id)
-    student_courses.where(student_id: student_id).pluck(:grade).first
-  end
-
   def student_rank
     student_courses.joins(:student)
                    .select("students.name, student_courses.grade")

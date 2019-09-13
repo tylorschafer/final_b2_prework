@@ -1,4 +1,4 @@
 <h1><%= @student.name %>'s Info</h1>
-<% @student.courses.each do |course| %>
-  <p><%= course.name %>: <%= course.student_grade(@student.id) %></p>
+<% @student.student_courses.each do |student_course| %>
+  <p><%= student_course.course.name %>: <%= student_course.grade %></p>
 <% end %>
